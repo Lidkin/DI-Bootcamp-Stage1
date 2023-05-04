@@ -7,7 +7,11 @@ body {
     background-size: cover;
 }
 
-h2+p {
+h2 {
+    color: red;
+}
+
+p {
     color: rgb(140, 10, 5);
     text-align: center;
     border: 5px solid #8a2e6190;
@@ -20,6 +24,17 @@ p {
     font-weight: lighter;
     font-size: 100%;
     font-family: 'Dancing Script', cursive;
+    word-spacing: 1em;
+    font-variant: small-caps;
+}
+
+img {
+    float: right;
+}
+
+footer {
+    clear: both;
+    text-align: center;
 }
 
 li {
