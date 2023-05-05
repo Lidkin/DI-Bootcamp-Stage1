@@ -1,8 +1,23 @@
+* {
+    font-family: Ubuntu;
+}
+
 div {
     color: white;
     background-color: red;
     font-size: 32px;
     text-align: center;
     font-weight: bold;
-    font-family: Ubuntu;
+}
+
+p {
+    color: white;
+    background-color: green;
+    font-size: 18px;
+}
+
+button {
+    background-color: orange;
+    font-size: 18px;
+    border: 2px rgb(210, 208, 208) outset;
 }
