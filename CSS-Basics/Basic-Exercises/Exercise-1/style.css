@@ -9,15 +9,3 @@ div {
     text-align: center;
     font-weight: bold;
 }
-
-p {
-    color: white;
-    background-color: green;
-    font-size: 18px;
-}
-
-button {
-    background-color: orange;
-    font-size: 18px;
-    border: 2px rgb(210, 208, 208) outset;
-}
