@@ -1,0 +1,50 @@
+body {
+    background-color: #e3ac7c;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    hyphens: manual;
+}
+
+section {
+    border: 3px dotted black;
+}
+
+h1 {
+    border-bottom: 3px dotted black;
+    text-align: center;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    margin-top: 0%;
+}
+
+div {
+    width: 40vw;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    text-align: center;
+    line-height: 150%;
+    list-style: none;
+    font-style: italic;
+    padding-left: 0px;
+}
+
+li::first-letter {
+    font-size: 150%;
+}
+
+p {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8em;
+}
