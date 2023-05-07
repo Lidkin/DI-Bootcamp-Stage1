@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div {
+    border: 3px solid black;
+    width: 30%;
+    height: 70vw;
+    margin-left: 2%;
+    display: inline-block;
+}
+
+#header {
+    width: 95%;
+    height: 30vw;
+    background: #8d7cc2;
+    margin-bottom: 30px;
+}
+
+#one {
+    background: #e06665;
+
+}
+
+#two {
+    background: #92c47d;
+}
+
+#tree {
+    background: #fe9900;
+
+}
