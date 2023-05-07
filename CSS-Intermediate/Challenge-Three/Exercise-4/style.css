@@ -8,25 +8,22 @@ footer>div {
 }
 
 header {
-    width: 89vw;
     height: 100px;
     background-color: #009d0e;
-    margin: 30px 1vw 10px 1vw;
+    margin: 30px 0px 10px 0px;
 }
 
-section>div,
-footer>div {
-    width: 28vw;
-    height: 28vw;
-    margin: 1vw;
-    display: inline-block;
+section,
+footer {
+    display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    gap: 30px;
+    margin-top: 30px;
 }
 
-section {
-    margin-bottom: 10px;
+.pic {
+    width: 32vw;
+    height: 32vw;
 }
 
 img {
@@ -34,14 +31,14 @@ img {
     height: inherit;
 }
 
-#One {
+.One {
     background-color: #fe9900;
 }
 
-#Two {
+.Two {
     background-color: #cf2a28;
 }
 
-#Three {
+.Three {
     background-color: #6fa8dd;
 }
