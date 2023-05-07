@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    height: 40%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 90%;
+    margin-left: 10px;
+}
+
+.container {
+    margin: 20px 0px;
+    width: 100%;
+}
+
+div,
+footer {
+    display: inline-block;
+    height: 100%;
+}
+
+.left,
+.right,
+footer {
+    border: 2px solid black;
+}
+
+.left {
+    width: 25%;
+    background: rgba(233, 153, 152, 255);
+    margin-right: 5%;
+}
+
+.right {
+    width: 60%;
+    background: rgba(159, 196, 248, 255);
+}
+
+footer {
+    width: 90%;
+    background: rgba(255, 229, 154, 255);
+
+}
