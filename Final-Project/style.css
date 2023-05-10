@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&family=Philosopher:ital@0;1&family=Special+Elite&display=swap');
 
-/*define general conditions for all elements*/
-* {
-    box-sizing: border-box;
-}
-
 /*assign background settings*/
 body {
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: fixed;
+    height: 1955px;
     background-image: url('cenobite/alex-foret-unsplash.png');
-    /* animation: forest-move 10s infinite;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    animation: forest-move 10s infinite;
 }
 
 /*animate the background*/
@@ -26,19 +22,19 @@ body {
 
     to {
         background-image: url("cenobite/marek-unsplash.png");
+
     }
 }
 
 
-
 header {
     display: flex;
-    justify-content: left;
     align-items: center;
     width: 100%;
     height: 10vh;
-    margin: 0 15vw;
     position: fixed;
+    left: 10vw;
+    top: 1vh;
     animation: header-move 10s infinite;
 }
 
@@ -62,9 +58,8 @@ header {
 h2 {
     font-family: 'Cinzel Decorative', cursive;
     font-size: 3cqw;
+    padding-left: 1vw;
 }
-
-
 
 .mypage a {
     font-family: 'Special Elite', cursive;
@@ -97,6 +92,8 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 15vh;
 }
 
 .list,
@@ -143,12 +140,13 @@ a:hover {
 
 /*--------------------------------*/
 .content {
-    margin-left: 10px;
-    flex-grow: 1;
-    max-height: 100vh;
+    position: fixed;
+    top: 11.5vh;
+    left: 20vw;
+    height: 100%;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
+    padding-right: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Стили для скроллбара */
@@ -175,22 +173,29 @@ a:hover {
     justify-content: space-between;
 }
 
-/*
-.leftbar {
-    position: sticky;
-    top: 20vh;
-    left: 5px;
-}*/
+p {
+    font-family: 'Cabin Sketch', cursive;
+    color: whitesmoke;
+    font-size: 1.5cqw;
+    color-interpolation-filters: linearRGB;
+    padding-bottom: 10%;
+}
+
+/*----------------------------------*/
 
 footer {
-
-
-    width: 15vw;
+    width: 35vw;
     height: 10vh;
-    position: sticky;
-    left: 0px;
+    position: fixed;
+    right: 5px;
     bottom: 1vh;
     border: 2px solid green;
+}
+
+footer a {
+    color: #f70707;
+    text-decoration: none;
+    text-align: center;
 }
 
 #mypage {
