@@ -1,82 +1,199 @@
-@import url("https: //fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Creepster&family=Philosopher:ital@0;1&family=Ubuntu&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&family=Philosopher:ital@0;1&family=Special+Elite&display=swap');
 
+/*define general conditions for all elements*/
 * {
     box-sizing: border-box;
 }
 
-.page {
-    font-family: 'Amatic SC', cursive;
-    font-weight: bolder;
-    font-size: larger;
+/*assign background settings*/
+body {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: fixed;
+    background-image: url('cenobite/alex-foret-unsplash.png');
+    /* animation: forest-move 10s infinite;*/
 }
 
-.list {
-    font-family: 'Philosopher', sans-serif;
+/*animate the background*/
+@keyframes forest-move {
+    from {
+        background-image: url("cenobite/marek-unsplash.png");
+    }
+
+    50% {
+        background-image: url('cenobite/alex-foret-unsplash.png');
+    }
+
+    to {
+        background-image: url("cenobite/marek-unsplash.png");
+    }
 }
+
+
 
 header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
     width: 100%;
-    border: 2px solid blue;
-    text-align: center;
-    color: brown;
+    height: 10vh;
+    margin: 0 15vw;
+    position: fixed;
+    animation: header-move 10s infinite;
+}
+
+@keyframes header-move {
+    from {
+        color: black;
+        background-color: whitesmoke;
+    }
+
+    50% {
+        color: whitesmoke;
+        background-color: black;
+    }
+
+    to {
+        color: black;
+        background-color: whitesmoke;
+    }
 }
 
 h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3cqw;
+}
+
+
+
+.mypage a {
+    font-family: 'Special Elite', cursive;
     font-weight: lighter;
-    font-family: 'Creepster', cursive;
+    font-size: 2cqw;
+    line-height: 200%;
+    text-align: center;
 }
 
-main {
+.list {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-main,
-footer {
-    margin-top: 1%;
-}
-
-aside {
-    width: 20%;
-    height: 80vh;
-    margin-right: 5px;
-    border: 2px solid red;
-}
-
-section {
-    display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-around;
-    margin: 2% 5% 5% 15%;
-    border: 2px dotted red;
+    align-items: center;
+    width: 15vw;
+    height: 30vh;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 3cqw;
 }
 
-.list>a:hover {
-    font-family: 'Philosopher';
+.mypage {
+    display: flex;
+    align-items: center;
+    width: 15vw;
+}
+
+.leftbar {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list,
+.mypage {
+    border-radius: 2cqw;
+    animation: move 10s infinite;
+}
+
+@keyframes move {
+    from {
+        background-color: rgba(10, 10, 10, 0.8);
+    }
+
+    50% {
+
+        background-color: rgba(250, 250, 250, 0.1);
+    }
+
+    to {
+        background-color: rgba(10, 10, 10, 0.8);
+    }
+}
+
+a:link {
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+}
+
+a:visited,
+a:hover,
+a:active,
+a:focus {
+    color: rgb(250, 250, 250);
+}
+
+a {
+    text-shadow: rgb(255, 0, 0) 0 0, 0 0 0.8cqw rgba(255, 0, 0, 0.6),
+        0 0 0.8cqw rgba(255, 0, 0, 0.6);
+}
+
+a:hover {
     font-weight: bold;
 }
 
-.page>a:hover {
-    font-family: 'Amatic SC', cursive;
+/*--------------------------------*/
+.content {
+    margin-left: 10px;
+    flex-grow: 1;
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
 }
 
-article {
-    width: 80%;
-    height: 80vh;
-    border: solid black;
-    margin-left: 5px;
+/* Стили для скроллбара */
+.content::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
+
+.content::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.content::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/*-------------------------------*/
+.page {
+    width: 95vw;
+    padding-top: 12vh;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+}
+
+/*
+.leftbar {
+    position: sticky;
+    top: 20vh;
+    left: 5px;
+}*/
 
 footer {
-    width: 100%;
-    height: 5vh;
+
+
+    width: 15vw;
+    height: 10vh;
+    position: sticky;
+    left: 0px;
+    bottom: 1vh;
     border: 2px solid green;
-    display: block;
 }
 
-#my-page {
+#mypage {
     width: 100%;
     height: 80vh;
     border: 2px dotted blueviolet;

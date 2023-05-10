@@ -18,7 +18,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column
+        flex-direction: column;
     }
 
     body {
@@ -27,12 +27,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin: 0
     }
 
     header {
-        margin: 0.5%;
+        display: flex;
+        justify-content: end;
+        margin: 0.1%;
         font-family: 'Amatic SC';
         font-weight: bolder;
         font-size: larger;
@@ -47,9 +49,9 @@
 
 <body link="black" vlink="red" alink="#ff0000">
 
-    <head>
-        <header>
-            <a href="index.html">Home</a>
-        </header>
-    </head>
+    <header>
+        <a href="index.html">Home</a>
+        <p></p>
+    </header>
+
     <script src=cenobite.js></script>

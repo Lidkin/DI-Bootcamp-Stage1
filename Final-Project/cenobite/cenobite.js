@@ -222,8 +222,7 @@ const sketch = ({ context, width, height }) => {
         context.fillRect(0, 0, width, height);
 
         context.drawImage(imgA, 0, 0);
-        /*
-        
+        /*   
             pictures.forEach( picture => {
               picture.faceDraw(context);     
             });
