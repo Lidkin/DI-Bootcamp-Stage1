@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,22 +15,20 @@
 </head>
 
 <body>
-
-
     <header>
         <div class="topbar">
             <h2>Scary stories can also be an inspiration</h2>
         </div>
     </header>
 
-    <button onclick="topFunction()" id="myBtn">Top</button>
-    <button onclick="ExecuteScript()" id="down">Push me</button>
+    <button onclick="topFunction()" id="myBtn">Up</button>
+    <button onclick="downFunction()" id="down">Down</button>
 
     <main class="page">
         <aside class="leftbar">
 
             <section class="list">
-                <a href="content.html">Inspiration</a>
+                <a href="content.html">What inspires me</a>
             </section>
 
             <section class="mypage">
@@ -40,7 +37,7 @@
 
         </aside>
 
-        <article></article>
+        <article class="about">The horror genre intrigues me and I love it</article>
     </main>
 
     <script>
@@ -48,7 +45,8 @@
         window.onscroll = function () { scrollFunction() };
 
         function scrollFunction() {
-            if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
+
+            if (document.body.scrollTop > document.body.scrollHeight * 0.3 || document.documentElement.scrollTop > document.body.scrollHeight * 0.3) {
                 document.getElementById("myBtn").style.display = "block";
                 document.getElementById("down").style.display = "none";
             } else {
@@ -58,14 +56,22 @@
         }
 
         // When the user clicks on the button, scroll to the top of the document
+
         function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            const options = {
+                top: 0,
+                behavior: 'smooth' // Добавляем плавную прокрутку
+            };
+            window.scrollTo(options);
         }
 
         // This function for scrolling up of the document
-        function ExecuteScript() {
-            window.scrollTo(0, document.body.scrollHeight);
+        function downFunction() {
+            const options = {
+                top: document.body.scrollHeight,
+                behavior: 'smooth' // Добавляем плавную прокрутку
+            };
+            window.scrollTo(options);
         }
     </script>
 
