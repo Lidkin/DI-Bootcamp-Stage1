@@ -31,7 +31,7 @@
                 <a href="javascript:void(0);" onclick="scrollToElement('books')">Books</a>
                 <a href="javascript:void(0);" onclick="scrollToElement('mooves')">Mooves</a>
                 <a href="javascript:void(0);" onclick="scrollToElement('series')">Series</a>
-                <a href="index.html">Return</a>
+                <a href="index.html">Home Page</a>
             </section>
             <section class="mypage textContent">
                 <a href="cenobite.html">Result of inspiration</a>
@@ -43,6 +43,19 @@
     <button class="back-to-top" onclick="scrollToTop()" id="up">Up</button>
 
     <script>
+        function scrollToElement(elementId) {
+            const frame = document.getElementById("contentFrame");
+            const iframeContent = frame.contentWindow || frame.contentDocument;
+            const element = iframeContent.document.getElementById(elementId);
+
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
         function scrollToTop() {
             const frames = document.getElementsByTagName('iframe');
 
@@ -103,7 +116,9 @@
                     iframeContent.addEventListener('scroll', handleScroll);
                 }
             });
-        }    </script>
+        }
+
+    </script>
 </body>
 
 </html>
