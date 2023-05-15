@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,shrink-to-fit=0,user-scalable=no,minimum-scale=1,maximum-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <link
-    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Creepster&family=Philosopher:ital@0;1&family=Ubuntu&display=swap"
+    href='https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&family=Philosopher:ital@0;1&family=Special+Elite&display=swap'
     rel="stylesheet" />
 <title>cenobite.js</title>
 <style>
@@ -25,19 +25,48 @@
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         flex-direction: column-reverse;
-        margin: 0
+        margin: 0;
+        background-color: black;
+
     }
 
     header {
         display: flex;
-        justify-content: end;
-        margin: 0.1%;
-        font-family: 'Amatic SC';
-        font-weight: bolder;
-        font-size: larger;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5vh;
+        font-size: 1em;
+        font-family: 'Cinzel Decorative', cursive;
+    }
+
+    p {
+        color: whitesmoke;
+        font-size: smaller;
+    }
+
+    a:link {
+        text-decoration: none;
+        color: rgb(250, 250, 250);
+    }
+
+    a:visited,
+    a:hover,
+    a:active,
+    a:focus {
+        color: rgb(250, 250, 250);
+    }
+
+    a {
+        text-shadow: red 0 0, 0 0 0.8cqw rgba(255, 0, 0, 0.6),
+            0 0 0.8cqw rgba(255, 0, 0, 0.6);
+    }
+
+    a:hover {
+        font-weight: bold;
     }
 
     canvas {
@@ -51,7 +80,7 @@
 
     <header>
         <a href="index.html">Home</a>
-        <p></p>
+        <p>Click on face for start/stop</p>
     </header>
 
     <script src=cenobite.js></script>

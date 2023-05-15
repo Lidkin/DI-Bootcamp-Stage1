@@ -14,14 +14,14 @@
     <title>Scary stories</title>
 </head>
 
-<body>
+<body class="index">
     <header>
         <div class="topbar">
-            <h2>Scary stories can also be an inspiration</h2>
+            <p>Scary stories can also be an inspiration</p>
         </div>
     </header>
 
-    <button onclick="topFunction()" id="myBtn">Up</button>
+    <button onclick="topFunction()" id="up">Up</button>
     <button onclick="downFunction()" id="down">Down</button>
 
     <main class="page">
@@ -47,10 +47,10 @@
         function scrollFunction() {
 
             if (document.body.scrollTop > document.body.scrollHeight * 0.3 || document.documentElement.scrollTop > document.body.scrollHeight * 0.3) {
-                document.getElementById("myBtn").style.display = "block";
+                document.getElementById("up").style.display = "block";
                 document.getElementById("down").style.display = "none";
             } else {
-                document.getElementById("myBtn").style.display = "none";
+                document.getElementById("up").style.display = "none";
                 document.getElementById("down").style.display = "block";
             }
         }

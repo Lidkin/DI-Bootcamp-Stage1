@@ -10,128 +10,100 @@
     <link
         href='https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&family=Philosopher:ital@0;1&family=Special+Elite&display=swap'
         rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
     <title>My inspiration</title>
 </head>
 
-<body>
-    <button onclick="topFunction()" id="myBtn">Up</button>
+<body class="textContent">
 
-    <header>
+    <header class="textContent header">
         <div class="topbar">
-            <h2>Scary stories can also be an inspiration</h2>
+            <p>Scary stories can also be an inspiration</p>
         </div>
     </header>
 
     <main class="page">
-        <script>
-            // Функция, которая будет вызываться при клике на ссылки
-            function scrollToElement(elementId) {
-                const element = document.getElementById(elementId);
-                if (element) {
-                    element.scrollIntoView({
-                        behavior: "smooth",
-                        block: 'start' // Прокрутить до верхней части вида
-                    });
-                }
-            }
-        </script>
-
         <aside class="leftbar">
-            <section class="list">
+            <section class="list textContent">
                 <a href="javascript:void(0);" onclick="scrollToElement('books')">Books</a>
                 <a href="javascript:void(0);" onclick="scrollToElement('mooves')">Mooves</a>
                 <a href="javascript:void(0);" onclick="scrollToElement('series')">Series</a>
                 <a href="index.html">Return</a>
             </section>
-            <section class="mypage">
+            <section class="mypage textContent">
                 <a href="cenobite.html">Result of inspiration</a>
             </section>
         </aside>
-
-        <article class="content">
-            <h1>Why Horror?</h2>
-                <p>Fairy tales like Cinderella, Little Red Riding Hood, or Sleeping Beauty, heard in early childhood,
-                    always ended well.
-                    But a lot changed when I learned to read and began visiting the library independently. In the
-                    village where I grew up,
-                    there was no censorship of literature by age, so I could choose whatever I wanted. Turned out that
-                    the original fairy
-                    tales are not so cute at all ... And it was scary ... exciting! From then began a fascinating
-                    passion for the worlds of
-                    horror and surrealism: Lafcraft, Stoker, King, Lynch, and many others. I want to introduce you here
-                    to some of my
-                    favorite works. Enjoy!</p>
-                <hr>
-                <h3>My Favorite Books</h3>
-                <p id="books"></p>
-                <p></p>
-                <hr>
-                <h3>My Favorite Mooves</h3>
-                <p id="mooves"></p>
-
-                <p></p>
-                <hr>
-                <h3>My Favorite Series</h3>
-                <p id="series"></p>
-                <p></p>
-        </article>
+        <iframe class="contentPage" id="contentFrame" src="contentPage.html"></iframe>
     </main>
 
+    <button class="back-to-top" onclick="scrollToTop()" id="up">Up</button>
 
     <script>
-        // When the user scrolls down 1000px from the top of the document, show the button
-        window.onscroll = function () { scrollFunction() };
+        function scrollToTop() {
+            const frames = document.getElementsByTagName('iframe');
 
-        function scrollFunction() {
+            for (let i = 0; i < frames.length; i++) {
+                const frame = frames[i];
+                const iframeContent = frame.contentWindow || frame.contentDocument;
+                if (!iframeContent) continue;
+                iframeContent.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
 
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                document.getElementById("myBtn").style.display = "block";
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function handleScroll() {
+            const backToTopButton = document.getElementById('up');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const frames = document.getElementsByTagName('iframe');
+
+            let isScrolled = false;
+            if (scrollTop > 600) {
+                isScrolled = true;
+            }
+
+            for (let i = 0; i < frames.length; i++) {
+                const frame = frames[i];
+                const iframeContent = frame.contentWindow || frame.contentDocument;
+                if (!iframeContent) continue;
+                const frameScrollTop = iframeContent.pageYOffset || iframeContent.document.documentElement.scrollTop;
+
+                if (frameScrollTop > 600) {
+                    isScrolled = true;
+                    break;
+                }
+            }
+
+            if (isScrolled) {
+                backToTopButton.style.display = 'block';
             } else {
-                document.getElementById("myBtn").style.display = "none";
+                backToTopButton.style.display = 'none';
             }
         }
 
-        // When the user clicks on the button, scroll to the top of the document
+        window.addEventListener('scroll', handleScroll);
 
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-
-    <footer>
-        <span id="section-info"></span>
-    </footer>
-
+        // Добавляем обработчик события для каждого iframe после их загрузки
+        const frames = document.getElementsByTagName('iframe');
+        for (let i = 0; i < frames.length; i++) {
+            const frame = frames[i];
+            frame.addEventListener('load', function () {
+                const iframeContent = frame.contentWindow || frame.contentDocument;
+                if (iframeContent) {
+                    iframeContent.addEventListener('scroll', handleScroll);
+                }
+            });
+        }    </script>
 </body>
 
 </html>
-
-<!--
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const sectionInfo = document.getElementById("section-info");
-                const content = document.querySelector(".content");
-                const sections = {
-                    books: document.getElementById("books"),
-                    movies: document.getElementById("movies"),
-                    series: document.getElementById("series")
-                };
-    
-                function updateSectionInfo() {
-                    for (const section in sections) {
-                        const rect = sections[section].getBoundingClientRect();
-                        if (rect.top <= 0 && rect.bottom >= 0) {
-                            sectionInfo.textContent = section.charAt(0).toUpperCase() + section.slice(1);
-                            break;
-                        }
-                    }
-                }
-    
-                content.addEventListener("scroll", updateSectionInfo);
-                updateSectionInfo();
-            });
-        </script>
-    -->

@@ -1,13 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&family=Philosopher:ital@0;1&family=Special+Elite&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 /*assign background settings*/
 body {
     height: 1955px;
-    background-image: url('cenobite/alex-foret-unsplash.png');
+    background-image: url("cenobite/marek-unsplash.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    animation: forest-move 10s infinite;
+    animation: forest-move 6s infinite;
+}
+
+.textContent::-webkit-scrollbar,
+.index::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.textContent::-webkit-scrollbar-thumb,
+.index::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.textContent::-webkit-scrollbar-track,
+.index::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 /*animate the background*/
@@ -37,37 +54,28 @@ header,
 
 header {
     align-items: center;
-    width: 100%;
+    width: 90vw;
     height: 10vh;
     position: fixed;
     z-index: 100;
     left: 10vw;
     top: 1vh;
-    animation: header-move 10s infinite;
+    background-color: black;
 }
 
-@keyframes header-move {
-    from {
-        color: black;
-        background-color: whitesmoke;
-    }
-
-    50% {
-        color: whitesmoke;
-        background-color: black;
-    }
-
-    to {
-        color: black;
-        background-color: whitesmoke;
-    }
-}
-
-h2 {
+.topbar p {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 3cqw;
+    font-size: 3.5vw;
     padding-left: 1vw;
+    color: whitesmoke;
+    animation: header-move 6s infinite;
 }
+
+.header {
+    position: absolute;
+}
+
+/*--------------------------------*/
 
 .mypage a,
 .list a {
@@ -114,7 +122,8 @@ h2 {
 .list,
 .mypage {
     border-radius: 2cqw;
-    animation: move 10s infinite;
+    background-color: rgba(10, 10, 10, 0.8);
+    animation: move 6s infinite;
 }
 
 @keyframes move {
@@ -123,7 +132,6 @@ h2 {
     }
 
     50% {
-
         background-color: rgba(250, 250, 250, 0.1);
     }
 
@@ -154,62 +162,11 @@ a:hover {
 }
 
 /*--------------------------------*/
-.content {
-    margin-top: 1.5vh;
-    margin-left: 20vw;
-    top: 11.5vh;
-    left: 20vw;
-    height: max-content;
-    overflow-y: auto;
-    padding-right: 5%;
-    background-color: rgba(0, 0, 0, 0.5);
+
+.textContent {
+    animation: none;
 }
 
-/* Стили для скроллбара */
-.content::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-.content::-webkit-scrollbar-thumb {
-    background-color: transparent;
-}
-
-.content::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-p[id] {
-    scroll-margin-top: 19vh;
-}
-
-h1,
-h3 {
-    animation: letter-move 10s infinite;
-    padding-left: 5vw;
-}
-
-@keyframes letter-move {
-    frome {
-        text-shadow: none;
-    }
-
-    50% {
-        text-shadow: black 0 0, 0 0 0.8cqw rgba(255, 0, 0, 0.6),
-            0 0 0.8cqw rgba(255, 0, 0, 0.6);
-    }
-
-    to {
-        text-shadow: none;
-    }
-}
-
-h1+p {
-    font-size: larger;
-    line-height: 250%;
-}
-
-/*-------------------------------*/
 .page {
     width: 95vw;
     padding-top: 12vh;
@@ -217,16 +174,6 @@ h1+p {
     align-items: start;
     justify-content: space-between;
 }
-
-p {
-    font-family: 'Cabin Sketch', cursive;
-    color: whitesmoke;
-    font-size: 1.5cqw;
-    padding-bottom: 10%;
-    padding-left: 2%;
-}
-
-/*-----------------------------------*/
 
 .about {
     display: block;
@@ -241,26 +188,15 @@ p {
     background-color: black;
 }
 
-/*----------------------------------*/
-
-footer {
-    width: 35vw;
-    height: 10vh;
-    position: fixed;
-    right: 30vw;
-    bottom: 1vh;
-    border: 2px solid green;
+iframe {
+    width: 100%;
+    height: 1770px;
+    margin-left: 18vw;
+    border: none;
 }
 
-footer a {
-    color: #f70707;
-    text-decoration: none;
-    text-align: center;
-}
-
-/*--------*/
-
-#myBtn {
+/*-------------------------------*/
+#up {
     display: none;
     bottom: 5vh;
 
@@ -271,7 +207,7 @@ footer a {
     top: 15vh;
 }
 
-#myBtn,
+#up,
 #down {
     position: fixed;
     right: 30px;
@@ -288,7 +224,7 @@ footer a {
     border-radius: 5cqw;
 }
 
-#myBtn:hover,
+#up:hover,
 #down:hover {
     background-color: #555;
 }
