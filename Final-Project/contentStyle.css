@@ -12,7 +12,7 @@ body {
 
 }
 
-/* Стили для скроллбара */
+/* scrollbar styles*/
 .contentPage::-webkit-scrollbar {
     width: 0;
     height: 0;
@@ -73,7 +73,7 @@ h1+p {
 .king-img {
     float: left;
     margin-right: 10px;
-    margin-left: 1vw;
+    margin-left: 2vw;
 }
 
 /*-------------------------------*/
@@ -81,7 +81,7 @@ h1+p {
 p {
     font-family: 'Cabin Sketch', cursive;
     color: whitesmoke;
-    font-size: 1.5cqw;
+    font-size: 2cqw;
     padding-left: 2%;
     line-height: 110%;
 }
@@ -99,7 +99,13 @@ video {
 }
 
 .tooltip-image {
-    width: 10vw
+    width: 12vw;
+    margin: 0.5vw;
+}
+
+.cenobite .tooltip-image {
+    width: 18vw;
+    margin: 0.5vw;
 }
 
 .tooltiptext {
@@ -128,6 +134,7 @@ video {
 .image {
     position: relative;
     display: inline-block;
+    max-width: 20vw;
     cursor: zoom-in;
 }
 
@@ -152,7 +159,15 @@ video {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin: 2vw;
+    margin: 1vw;
+}
+
+.cenobite {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 video {
