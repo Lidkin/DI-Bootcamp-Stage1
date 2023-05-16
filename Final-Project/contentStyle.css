@@ -141,13 +141,24 @@ video {
     cursor: zoom-out;
 }
 
+.image.zoomed .cenobite-img {
+    width: 85vw;
+}
+
+.image.zoomed .it-img {
+    width: 20vh;
+}
+
+.image.zoomed .books-img {
+    width: 30vw;
+}
+
 .image.zoomed img {
-    width: 50vh;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
+    position: relative;
+    top: 10%;
+    left: 5%;
+    transform: translate(-5%, -10%);
+    max-width: 100vw;
     z-index: 999;
 }
 
