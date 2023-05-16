@@ -43,7 +43,7 @@
     <button class="back-to-top" onclick="scrollToTop()" id="up">Up</button>
 
     <script>
-        function scrollToElement(elementId) {
+        function scrollToElement(elementId) {  //scrolls the page to element in iframe (contentPage.html)
             const frame = document.getElementById("contentFrame");
             const iframeContent = frame.contentWindow || frame.contentDocument;
             const element = iframeContent.document.getElementById(elementId);
@@ -56,7 +56,7 @@
             }
         }
 
-        function scrollToTop() {
+        function scrollToTop() { //scrolls the page and all iframes back to the top using the smooth scrolling behavior.
             const frames = document.getElementsByTagName('iframe');
 
             for (let i = 0; i < frames.length; i++) {
@@ -75,7 +75,7 @@
             });
         }
 
-        function handleScroll() {
+        function handleScroll() {  //responsible for determining whether to display the "Up" button based on the scroll position of the page and iframes. 
             const backToTopButton = document.getElementById('up');
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const frames = document.getElementsByTagName('iframe');
@@ -104,7 +104,7 @@
             }
         }
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll); //triggers the "handleScroll()" function whenever the user scrolls the page. 
 
         // add an event handler for each iframe after they are loaded
         const frames = document.getElementsByTagName('iframe');

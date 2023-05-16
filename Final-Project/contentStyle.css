@@ -2,14 +2,12 @@ body {
     box-sizing: content-box;
     background-image: none;
     animation: none;
-    background-color: #000000a9;
 }
 
 .contentPage {
     overflow-y: scroll;
     overflow-wrap: break-word;
-    background-color: rgba(0, 0, 0, 0.8);
-
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* scrollbar styles*/
@@ -57,7 +55,7 @@ h1 {
 }
 
 h1+p {
-    font-size: 2.5vw;
+    font-size: 2vw;
     line-height: 150%;
 }
 
@@ -83,6 +81,7 @@ p {
     color: whitesmoke;
     font-size: 2vw;
     padding-left: 2%;
+    padding-right: 1vw;
     line-height: 110%;
 }
 
@@ -120,7 +119,7 @@ video {
     padding: 1px;
     border-radius: 5px;
     transition: visibility 0.3s, opacity 0.3s;
-    font-size: 1vw;
+    font-size: 1.5vw;
     font-family: 'Philosopher', sans-serif;
     text-align: center;
 }
@@ -175,11 +174,12 @@ video {
     margin: 1vw;
 }
 
-.books,
-.movies,
-.series {
+#books,
+#movies,
+#series {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1vh;
+    margin: 1vh 0;
     padding: 0.5vw;
+    background-color: #000000b7;
 }
